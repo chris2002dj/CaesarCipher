@@ -2,7 +2,7 @@
 
 namespace CaesarCipherLibrary
 {
-    public class CaesarCipher
+    public abstract class CaesarBase
     {
         protected int Key { get; set; } // Dichiaro una chiave
 
@@ -29,6 +29,16 @@ namespace CaesarCipherLibrary
                 message += Cipher(ch); // 
 
             return message; // 
+        }
+    }
+
+    public class CaesarCode:CaesarBase
+    {
+        public string CipherText { get; set; }
+        public CaesarCode (string message, int key)
+        {
+            Key = key;
+            CipherText = DoWork(message);
         }
     }
 }

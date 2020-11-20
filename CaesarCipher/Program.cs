@@ -6,7 +6,7 @@ namespace CaesarCipher
     {
         static void Main(string[] args)
         {
-
+            CaesarBase code = new CaesarCode();
         }
     }
 }
